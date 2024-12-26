@@ -6,14 +6,20 @@ export default defineConfig({
   modelsSrc: './src/embeddable.com/models',
   componentsSrc: './src/embeddable.com/components',
   presetsSrc: './src/embeddable.com/presets',
-  errorFallbackComponent: './src/embeddable.com/components/util/ErrorHandler.jsx',
+  errorFallbackComponent:
+    './src/embeddable.com/components/util/ErrorHandler.jsx',
+  // componentLibraries: [{
+  //   name: '@mikhail-terekhov/vanilla-components',
+  //   include: ['BarChart', 'DateRangePicker']
+  // }],
+  componentLibraries: ['vanilla-components'],
 
-  // 
+  //
   // Uncomment for US deployments
   //
   // previewBaseUrl: 'https://app.us.embeddable.com',
   // pushBaseUrl: 'https://api.us.embeddable.com',
-  
+
   //
   // Uncomment for EU deployments
   //
