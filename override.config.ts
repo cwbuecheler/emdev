@@ -3,7 +3,7 @@ import themes from './src/themes';
 const overrideProps = (ctx): any => {
   const defaultTheme = themes['default'];
   const clientTheme = ctx.theme; // eg 'celtics'
-  const currentTheme = themes[clientTheme];
+  const currentTheme = themes[clientTheme] ? themes[clientTheme] : defaultTheme;
 
   return {
     theme: {
