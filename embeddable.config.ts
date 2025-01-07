@@ -1,5 +1,6 @@
 import { defineConfig } from '@embeddable.com/sdk-core';
 import react from '@embeddable.com/sdk-react';
+import themes from './src/themes';
 
 export default defineConfig({
   plugins: [react],

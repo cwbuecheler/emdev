@@ -1,15 +1,7 @@
-import { Theme } from '../../types/themes';
-
-const celticsTheme: Theme = {
-  /* Colors - Category */
-  'color-category-1': '#ba9653',
-  'color-category-2': '#000000',
-  'color-category-3': '#963821',
-  'color-category-4': '#f4f4f4',
-  'color-category-5': '#62e06b',
-
-  /* Colors - Charts */
-  'color-charts': [
+const celticsTheme: any = {
+  brandColorPrimary: '#008348',
+  brandColorSecondary: '#ba9653',
+  chartColors: [
     '#c5fae2',
     '#7ef2be',
     '#2ce391',
@@ -19,9 +11,11 @@ const celticsTheme: Theme = {
     '#006638',
     '#004d2a',
   ],
-
-  /* Typography */
-  'font-custom': 'Impact',
+  chartFont: {
+    family:
+      'impact, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    size: 14,
+  },
 };
 
 export default celticsTheme;
