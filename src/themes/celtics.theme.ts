@@ -1,6 +1,8 @@
-const celticsTheme: any = {
-  brandColorPrimary: '#008348',
-  brandColorSecondary: '#ba9653',
+import { Theme } from './index';
+
+const celticsTheme: Theme = {
+  'brand-color-primary': '#008348',
+  'brand-color-secondary': '#ba9653',
   chartColors: [
     '#c5fae2',
     '#7ef2be',
