@@ -1,30 +1,53 @@
 import celticsTheme from './celtics.theme';
 import defaultTheme from './default.theme';
 
-// This will be imported from vanilla components eventually
+export type ChartType =
+  | 'bar'
+  | 'line'
+  | 'pie'
+  | 'doughnut'
+  | 'radar'
+  | 'polarArea'
+  | 'bubble'
+  | 'scatter'
+  | 'kpi';
+
 export type Theme = {
-  'brand-color-primary'?: string;
-  'brand-color-secondary'?: string;
-  chartColors?: string[];
-  chartFont?: {
-    color?: string;
-    family?: string;
-    size?: number;
+  brand: {
+    primary: string;
+    secondary: string;
   };
-  chartOptions?: {
-    toolTipEnabled?: boolean;
+  charts: {
+    colors: string[];
+    options: {
+      toolTipEnabled: boolean;
+      usePointStyle: boolean;
+    };
+  } & {
+    [key in ChartType]?: any;
   };
-  dateFormats?: {
-    year?: string;
-    quarter?: string;
-    month?: string;
-    day?: string;
-    week?: string;
-    hour?: string;
-    minute?: string;
-    second?: string;
+  dateFormats: {
+    year: string;
+    quarter: string;
+    month: string;
+    day: string;
+    week: string;
+    hour: string;
+    minute: string;
+    second: string;
+  };
+  font: {
+    color: string;
+    family: string;
+    size: number;
   };
 };
+
+type ThemeDeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object ? ThemeDeepPartial<T[P]> : T[P];
+};
+
+export type ThemePartial = ThemeDeepPartial<Theme>;
 
 export default {
   celtics: celticsTheme,
